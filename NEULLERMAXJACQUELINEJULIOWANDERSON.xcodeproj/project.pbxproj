@@ -14,6 +14,8 @@
 		E08105C328B590FA00BEE2EA /* NEULLERMAXJACQUELINEJULIOWANDERSON.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E08105C128B590FA00BEE2EA /* NEULLERMAXJACQUELINEJULIOWANDERSON.xcdatamodeld */; };
 		E08105C528B590FD00BEE2EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E08105C428B590FD00BEE2EA /* Assets.xcassets */; };
 		E08105C828B590FD00BEE2EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E08105C628B590FD00BEE2EA /* LaunchScreen.storyboard */; };
+		E08105DA28B59B0F00BEE2EA /* Claim+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08105D828B59B0F00BEE2EA /* Claim+CoreDataClass.swift */; };
+		E08105DB28B59B0F00BEE2EA /* Claim+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08105D928B59B0F00BEE2EA /* Claim+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		E08105C428B590FD00BEE2EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E08105C728B590FD00BEE2EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E08105C928B590FD00BEE2EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E08105D828B59B0F00BEE2EA /* Claim+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Claim+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E08105D928B59B0F00BEE2EA /* Claim+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Claim+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,7 @@
 		E08105B728B590FA00BEE2EA /* NEULLERMAXJACQUELINEJULIOWANDERSON */ = {
 			isa = PBXGroup;
 			children = (
+				E08105D728B59A5800BEE2EA /* claimList */,
 				E08105B828B590FA00BEE2EA /* AppDelegate.swift */,
 				E08105BA28B590FA00BEE2EA /* SceneDelegate.swift */,
 				E08105BC28B590FA00BEE2EA /* ViewController.swift */,
@@ -68,6 +73,15 @@
 				E08105C128B590FA00BEE2EA /* NEULLERMAXJACQUELINEJULIOWANDERSON.xcdatamodeld */,
 			);
 			path = NEULLERMAXJACQUELINEJULIOWANDERSON;
+			sourceTree = "<group>";
+		};
+		E08105D728B59A5800BEE2EA /* claimList */ = {
+			isa = PBXGroup;
+			children = (
+				E08105D828B59B0F00BEE2EA /* Claim+CoreDataClass.swift */,
+				E08105D928B59B0F00BEE2EA /* Claim+CoreDataProperties.swift */,
+			);
+			path = claimList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,8 +157,10 @@
 			files = (
 				E08105BD28B590FA00BEE2EA /* ViewController.swift in Sources */,
 				E08105C328B590FA00BEE2EA /* NEULLERMAXJACQUELINEJULIOWANDERSON.xcdatamodeld in Sources */,
+				E08105DB28B59B0F00BEE2EA /* Claim+CoreDataProperties.swift in Sources */,
 				E08105B928B590FA00BEE2EA /* AppDelegate.swift in Sources */,
 				E08105BB28B590FA00BEE2EA /* SceneDelegate.swift in Sources */,
+				E08105DA28B59B0F00BEE2EA /* Claim+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="false" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21G83" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Claim" representedClassName="Claim" syncable="YES">
+        <attribute name="descriptionClaim" optional="YES" attributeType="String"/>
+        <attribute name="insertDate" optional="YES" attributeType="String"/>
+        <attribute name="location" optional="YES" attributeType="String"/>
+        <attribute name="nameClaim" optional="YES" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="Claim" positionX="-54" positionY="-9" width="128" height="89"/>
+    </elements>
 </model>
