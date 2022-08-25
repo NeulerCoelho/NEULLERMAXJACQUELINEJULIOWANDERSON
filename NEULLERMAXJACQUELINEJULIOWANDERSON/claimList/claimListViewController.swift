@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class claimListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
 
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -104,7 +104,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     // Core Data Functions
     
     func getAllClaim () {
-        print("ViewControllerError -> getAllClaim" )
+        print("ViewController -> getAllClaim" )
         do {
             models = try context.fetch(Claim.fetchRequest())
             DispatchQueue.main.async {
@@ -120,7 +120,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let newClaim = Claim(context: context)
         newClaim.nameClaim = nameClaim
         newClaim.insertDate = Date().formatted()
-        print("ViewControllerError -> createClaim" )
+        print("ViewController -> createClaim" )
         do{
             try context.save()
             getAllClaim()
