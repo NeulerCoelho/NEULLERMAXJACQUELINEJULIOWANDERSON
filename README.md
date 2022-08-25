@@ -1,26 +1,25 @@
-# Grupo 12 
-Participantes: 
+# Grupo 12 - Participantes: 
 
-               Jacqueline Carvalho Dias;
+               Jacqueline Carvalho Dias
 
-               Júlio Cesar dos Santos Pereira;
+               Júlio Cesar dos Santos Pereira
                
-               Neuler Coelho Pereira;
+               Neuler Coelho Pereira
                
-               Max Aurélio Araújo Pinheiro;
+               Max Aurélio Araújo Pinheiro
                
-               Wanderson Alan Leite Souza.
+               Wanderson Alan Leite Souza
 
-#FIAP: MBA em Mobile Development - Apps, IOT, Chatbots & Virtual Assistants 
+# FIAP: MBA em Mobile Development - Apps, IOT, Chatbots & Virtual Assistants 
 
 Professor: Eric Alves Brito
 
-#Trabalho de Conclusão Módulos 1 e 2 1. Descrição do Aplicativo a ser desenvolvido
+## Trabalho de Conclusão Módulos 1 e 2 1. Descrição do Aplicativo a ser desenvolvido
 
 Agora que aprendemos o básico para desenvolvermos aplicativos em iOS, vamos por em prática este conhecimento criando um app que nos ajudará a cuidar do nosso bairro!
 A proposta é que você crie um aplicativo onde o usuário poderá registrar qualquer problema que ele avistar em seu bairro ou em sua cidade. Encontrou um semáforo com defeito? Uma placa de trânsito quebrada? Buraco na rua ou na calçada? Lixeira danificada? Abra o app e registre esse problema (com localização e demais informações) para que posteriormente você possa entrar em contato com o órgão responsável.
 
-2. Funcionamento
+### Funcionamento
 
 O aplicativo deverá funcionar da seguinte maneira:
 1) Oaplicativoterá3telas:Listagem,ExibiçãoeEdição/Criação;
@@ -41,7 +40,7 @@ Data: 10/07/2022
 8) Os dados deverão ser armazenados utilizando Core Data. Todos os campos serão do tipo String (inclusive a Data)
 9) Toda a definição de interface (UI) do aplicativo ficará por conta do aluno, podendo ser a mais simples possível.
 10) Não é obrigatório implementar Autolayout
-3. Entrega
+### Entrega
 1) A data de entrega será definida no momento da publicação do trabalho no portal.
 2) O nome do projeto deverá ser composto pelo Primeiro Nome Dos Alunos (Ex.: PauloRenata).
 3) O projeto deverá ser publicado no GitHub, e no portal deverá ser enviado um .txt com os nomes e RMs dos alunos e o link do projeto no Git.
