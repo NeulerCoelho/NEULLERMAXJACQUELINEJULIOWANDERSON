@@ -9,23 +9,27 @@ import UIKit
 
 class claimListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    let tableView: UITableView = {
-        let table = UITableView ()
-        table.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        return table
-    }()
+
+    @IBOutlet weak var tableViewClaimList: UITableView!
+    
     var models = [Claim]()
+    var model  = Claim()
+    // @IBOutlet weak var tableViewClaimList: UITableView! =
+    // tableViewClaimList.dequeueReusableCell(withIdentifier: "cell")
+    // .register(UITableViewCell.self, forCellReuseIdentifier: "cell")
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         title = "Lista de Reclamações"
-        view.addSubview(tableView)
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.frame = view.bounds
+        //view.addSubview(tableView)
+
+//        tableViewClaimList.reuseIdentifier = "cell"
+        self.tableViewClaimList.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableViewClaimList.delegate = self
+        tableViewClaimList.dataSource = self
+        tableViewClaimList.frame = view.bounds
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(didTapAdd))
         
@@ -57,6 +61,9 @@ class claimListViewController: UIViewController, UITableViewDelegate, UITableVie
         
         sheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         sheet.addAction(UIAlertAction(title: "Editar", style: .default, handler: {_ in
+            self.model = self.models[indexPath.row]
+            self.performSegue(withIdentifier: "showDetailingSegue", sender: self)
+            /*
             let alertEdit = UIAlertController(title: "Editar Reclamação",
                                           message: "Informe os novos dados da reclamação" ,
                                           preferredStyle: .alert)
@@ -79,9 +86,10 @@ class claimListViewController: UIViewController, UITableViewDelegate, UITableVie
                 self?.updateClaim(item: claim, newName: (nameClaim.text)!,
                                   newLocation: (location.text)!,
                                   newDescriptionClaim: descriptionClaim.text!)
-            }))
             
-            self.present(alertEdit, animated: true)
+             }))
+            
+            self.present(alertEdit, animated: true) */
         }))
         sheet.addAction(UIAlertAction(title: "Deletar", style: .destructive, handler: {_ in
             self.deleteClaim(item: claim)
@@ -90,12 +98,13 @@ class claimListViewController: UIViewController, UITableViewDelegate, UITableVie
         present(sheet, animated: true)
     }
     
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return models.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let model = models[indexPath.row]
+        model = models[indexPath.row]
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text = model.nameClaim // Nome da Reclamacao
         return cell
@@ -108,7 +117,7 @@ class claimListViewController: UIViewController, UITableViewDelegate, UITableVie
         do {
             models = try context.fetch(Claim.fetchRequest())
             DispatchQueue.main.async {
-                self.tableView.reloadData()
+                self.tableViewClaimList.reloadData()
             }
         }
         catch{
@@ -154,6 +163,13 @@ class claimListViewController: UIViewController, UITableViewDelegate, UITableVie
             print("ViewControllerError -> Falha na atualização" )
         }
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDetailingSegue" {
+            let controller = segue.destination as! claimFormViewController
+            controller.model = model
+        }
     }
 }
 

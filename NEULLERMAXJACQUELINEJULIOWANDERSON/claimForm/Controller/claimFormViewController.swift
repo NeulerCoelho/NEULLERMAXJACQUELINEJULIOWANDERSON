@@ -8,11 +8,30 @@
 import UIKit
 
 class claimFormViewController: UIViewController {
-
+    @IBOutlet weak var name: UITextField!
+    @IBOutlet weak var descriptionClaim: UITextView!
+    @IBOutlet weak var location: UITextView!
+    @IBOutlet weak var insertDate: UILabel!
+    
+    
+    public var model  = Claim()
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        name.text = model.nameClaim
+        descriptionClaim.text = model.descriptionClaim
+        location.text = model.location
+        insertDate.text = model.insertDate
+        // Criando borda
+        let color = UIColor(red: 186/255, green: 186/255, blue: 186/255, alpha: 1.0).cgColor
+        descriptionClaim.layer.borderColor = color
+        descriptionClaim.layer.borderWidth = 0.5
+        descriptionClaim.layer.cornerRadius = 5
+
+        location.layer.borderColor = color
+        location.layer.borderWidth = 0.5
+        location.layer.cornerRadius = 5
     }
     
 
