@@ -11,10 +11,13 @@ class claimListViewController: UIViewController, UITableViewDelegate, UITableVie
 
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
+    
     @IBOutlet weak var tableViewClaimList: UITableView!
     
     var models = [Claim]()
     var model  = Claim()
+    var estilo = "Manter"
+    
     // @IBOutlet weak var tableViewClaimList: UITableView! =
     // tableViewClaimList.dequeueReusableCell(withIdentifier: "cell")
     // .register(UITableViewCell.self, forCellReuseIdentifier: "cell")
@@ -33,6 +36,9 @@ class claimListViewController: UIViewController, UITableViewDelegate, UITableVie
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(didTapAdd))
         
+        
+    }
+    override func viewWillAppear(_ animated: Bool) {
         getAllClaim ()
     }
     
@@ -55,14 +61,24 @@ class claimListViewController: UIViewController, UITableViewDelegate, UITableVie
         tableView.deselectRow(at: indexPath, animated: true)
         let claim = models[indexPath.row]
         
-        let sheet = UIAlertController(title: "Manter Reclamação",
+        let sheet = UIAlertController(title: nil,
                                       message: nil ,
                                       preferredStyle: .actionSheet)
         
         sheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-        sheet.addAction(UIAlertAction(title: "Editar", style: .default, handler: {_ in
+        sheet.addAction(UIAlertAction(title: "Consultar", style: .default, handler: {_ in
+            self.estilo = "Consultar"
             self.model = self.models[indexPath.row]
-            self.performSegue(withIdentifier: "showDetailingSegue", sender: self)
+            self.performSegue(withIdentifier: "showDetailingSegue", sender: self)}))
+        sheet.addAction(UIAlertAction(title: "Editar", style: .default, handler: {_ in
+            self.estilo = "Manter"
+            self.model = self.models[indexPath.row]
+            self.performSegue(withIdentifier: "showDetailingSegue", sender: self)}))
+        sheet.addAction(UIAlertAction(title: "Deletar", style: .destructive, handler: {_ in
+            self.deleteClaim(item: claim)
+        }))
+        
+        present(sheet, animated: false)
             /*
             let alertEdit = UIAlertController(title: "Editar Reclamação",
                                           message: "Informe os novos dados da reclamação" ,
@@ -89,15 +105,20 @@ class claimListViewController: UIViewController, UITableViewDelegate, UITableVie
             
              }))
             
-            self.present(alertEdit, animated: true) */
-        }))
-        sheet.addAction(UIAlertAction(title: "Deletar", style: .destructive, handler: {_ in
-            self.deleteClaim(item: claim)
-        }))
-        
-        present(sheet, animated: true)
+            self.present(alertEdit, animated: true)
+        }))*/
+
     }
     
+    // Passagem de parametros
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDetailingSegue" {
+            let controller = segue.destination as! claimFormViewController
+            controller.model = model
+            print (estilo)
+            controller.estilo = estilo
+        }
+    }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return models.count
@@ -150,6 +171,7 @@ class claimListViewController: UIViewController, UITableViewDelegate, UITableVie
             print("ViewControllerError -> Falha na deleção" )
         }
     }
+    /*
     func updateClaim (item : Claim, newName: String , newLocation: String , newDescriptionClaim: String ){
         item.nameClaim        = newName
         item.location         = newLocation
@@ -164,12 +186,6 @@ class claimListViewController: UIViewController, UITableViewDelegate, UITableVie
         }
         
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showDetailingSegue" {
-            let controller = segue.destination as! claimFormViewController
-            controller.model = model
-        }
-    }
+   */
 }
 

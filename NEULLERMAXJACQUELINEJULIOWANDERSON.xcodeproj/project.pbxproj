@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E075F95928B98AEA0040CD30 /* claimTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E075F95828B98AEA0040CD30 /* claimTableViewCell.swift */; };
 		E08105B928B590FA00BEE2EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08105B828B590FA00BEE2EA /* AppDelegate.swift */; };
 		E08105BB28B590FA00BEE2EA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08105BA28B590FA00BEE2EA /* SceneDelegate.swift */; };
 		E08105BD28B590FA00BEE2EA /* claimListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08105BC28B590FA00BEE2EA /* claimListViewController.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E075F95828B98AEA0040CD30 /* claimTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = claimTableViewCell.swift; path = claimList/claimTableViewCell.swift; sourceTree = "<group>"; };
 		E08105B528B590FA00BEE2EA /* NEULLERMAXJACQUELINEJULIOWANDERSON.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NEULLERMAXJACQUELINEJULIOWANDERSON.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E08105B828B590FA00BEE2EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E08105BA28B590FA00BEE2EA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +47,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E00D63D428B9519C00E1D347 /* main */ = {
+			isa = PBXGroup;
+			children = (
+				E08105C628B590FD00BEE2EA /* LaunchScreen.storyboard */,
+				E08105BE28B590FA00BEE2EA /* Main.storyboard */,
+			);
+			path = main;
+			sourceTree = "<group>";
+		};
 		E08105AC28B590FA00BEE2EA = {
 			isa = PBXGroup;
 			children = (
@@ -64,11 +75,10 @@
 		E08105B728B590FA00BEE2EA /* NEULLERMAXJACQUELINEJULIOWANDERSON */ = {
 			isa = PBXGroup;
 			children = (
+				E00D63D428B9519C00E1D347 /* main */,
 				E08CC6C228B7B6F700F47EEA /* claimForm */,
 				E08105D728B59A5800BEE2EA /* claimList */,
-				E08105BE28B590FA00BEE2EA /* Main.storyboard */,
 				E08105C428B590FD00BEE2EA /* Assets.xcassets */,
-				E08105C628B590FD00BEE2EA /* LaunchScreen.storyboard */,
 				E08105C928B590FD00BEE2EA /* Info.plist */,
 				E08105C128B590FA00BEE2EA /* NEULLERMAXJACQUELINEJULIOWANDERSON.xcdatamodeld */,
 			);
@@ -90,6 +100,7 @@
 		E08CC6BE28B7B5B000F47EEA /* view */ = {
 			isa = PBXGroup;
 			children = (
+				E075F95828B98AEA0040CD30 /* claimTableViewCell.swift */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -202,6 +213,7 @@
 				E08105C328B590FA00BEE2EA /* NEULLERMAXJACQUELINEJULIOWANDERSON.xcdatamodeld in Sources */,
 				E08105DB28B59B0F00BEE2EA /* Claim+CoreDataProperties.swift in Sources */,
 				E08105B928B590FA00BEE2EA /* AppDelegate.swift in Sources */,
+				E075F95928B98AEA0040CD30 /* claimTableViewCell.swift in Sources */,
 				E08105BB28B590FA00BEE2EA /* SceneDelegate.swift in Sources */,
 				E08105DA28B59B0F00BEE2EA /* Claim+CoreDataClass.swift in Sources */,
 				E08CC6C528B7B73D00F47EEA /* claimFormViewController.swift in Sources */,
