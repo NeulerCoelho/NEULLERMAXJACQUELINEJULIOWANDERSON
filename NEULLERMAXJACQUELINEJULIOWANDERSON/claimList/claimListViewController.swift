@@ -18,18 +18,13 @@ class claimListViewController: UIViewController, UITableViewDelegate, UITableVie
     var model  = Claim()
     var estilo = "Manter"
     
-    // @IBOutlet weak var tableViewClaimList: UITableView! =
-    // tableViewClaimList.dequeueReusableCell(withIdentifier: "cell")
-    // .register(UITableViewCell.self, forCellReuseIdentifier: "cell")
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         title = "Lista de Reclamações"
-        //view.addSubview(tableView)
 
-//        tableViewClaimList.reuseIdentifier = "cell"
-        self.tableViewClaimList.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        //self.tableViewClaimList.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         tableViewClaimList.delegate = self
         tableViewClaimList.dataSource = self
         tableViewClaimList.frame = view.bounds
@@ -124,11 +119,18 @@ class claimListViewController: UIViewController, UITableViewDelegate, UITableVie
         return models.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        model = models[indexPath.row]
+        model = models[indexPath.row] as Claim
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = model.nameClaim // Nome da Reclamacao
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "claimTableViewCell", for: indexPath) as? claimTableViewCell else {
+            return claimTableViewCell()
+        }
+
+        //cell.configure(with: model)
+        cell.claimNameCell?.text = model.nameClaim
+        cell.claimDateCell?.text = model.insertDate
+
         return cell
+        
     }
     
     // Core Data Functions

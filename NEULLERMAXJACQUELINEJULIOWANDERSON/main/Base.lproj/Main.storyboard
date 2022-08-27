@@ -21,34 +21,52 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="tIB-Ty-60g">
-                                        <rect key="frame" x="0.0" y="44.5" width="374" height="43.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="claimTableViewCell" rowHeight="120" id="tIB-Ty-60g" customClass="claimTableViewCell" customModule="NEULLERMAXJACQUELINEJULIOWANDERSON" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="374" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tIB-Ty-60g" id="j46-9P-Mwu">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="120"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="labelName" text="Título" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DhD-Pd-PnI">
-                                                    <rect key="frame" x="20" y="0.0" width="334" height="22"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="labelData" text="Data" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h2z-5q-H0B">
-                                                    <rect key="frame" x="20" y="22" width="334" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nfX-ux-hWj">
+                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="120"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="labelData" text="Data" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h2z-5q-H0B">
+                                                            <rect key="frame" x="20" y="53" width="374" height="59"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="labelName" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" text="Título" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" id="DhD-Pd-PnI">
+                                                            <rect key="frame" x="20" y="0.0" width="334" height="45"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <fontDescription key="fontDescription" name="MalayalamSangamMN" family="Malayalam Sangam MN" pointSize="18"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <constraints>
+                                                        <constraint firstItem="h2z-5q-H0B" firstAttribute="top" secondItem="DhD-Pd-PnI" secondAttribute="bottom" constant="8" symbolic="YES" id="FDB-Cs-fR4"/>
+                                                        <constraint firstItem="h2z-5q-H0B" firstAttribute="leading" secondItem="DhD-Pd-PnI" secondAttribute="leading" id="TIy-4S-lHw"/>
+                                                        <constraint firstAttribute="trailing" secondItem="h2z-5q-H0B" secondAttribute="trailing" constant="-20" id="hBi-0B-yqT"/>
+                                                        <constraint firstItem="h2z-5q-H0B" firstAttribute="bottom" secondItem="nfX-ux-hWj" secondAttribute="bottomMargin" id="vmr-ne-HxB"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="nfX-ux-hWj" firstAttribute="top" secondItem="j46-9P-Mwu" secondAttribute="top" id="A7R-Ut-Gea"/>
+                                                <constraint firstAttribute="bottom" secondItem="nfX-ux-hWj" secondAttribute="bottom" id="Cpr-B8-zK1"/>
+                                                <constraint firstAttribute="trailing" secondItem="nfX-ux-hWj" secondAttribute="trailing" id="I3K-8t-aAC"/>
+                                                <constraint firstItem="nfX-ux-hWj" firstAttribute="leading" secondItem="j46-9P-Mwu" secondAttribute="leading" id="JEi-sj-8re"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="claimDateCell" destination="h2z-5q-H0B" id="0Nd-Jq-ARG"/>
+                                            <outlet property="claimNameCell" destination="DhD-Pd-PnI" id="4JO-Py-kTu"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="titulo" value="teste do titulo"/>
-                                </userDefinedRuntimeAttributes>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
