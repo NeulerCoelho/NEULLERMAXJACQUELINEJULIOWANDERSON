@@ -42,14 +42,17 @@ class claimListViewController: UIViewController, UITableViewDelegate, UITableVie
                                       message: "Título da nova reclamação" ,
                                       preferredStyle: .alert)
         alert.addTextField()
-        alert.addAction (UIAlertAction(title: "Enviar", style: .cancel, handler: { [weak self] _ in
+        alert.addAction (UIAlertAction(title: "Inserir", style: .cancel, handler: { [weak self] _ in
             guard let field = alert.textFields?.first , let text = field.text , !text.isEmpty else {
                 return
             }
-            self?.createClaim(nameClaim: text)
+            self?.estilo = "Manter"
+            self?.model = self?.createClaim(nameClaim: text) ?? Claim()
+            self?.performSegue(withIdentifier: "showDetailingSegue", sender: self)
         }))
         
         present(alert, animated: true)
+        
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -148,18 +151,19 @@ class claimListViewController: UIViewController, UITableViewDelegate, UITableVie
         }
     }
     
-    func createClaim (nameClaim: String) {
+    func createClaim (nameClaim: String) -> Claim {
         let newClaim = Claim(context: context)
         newClaim.nameClaim = nameClaim
         newClaim.insertDate = Date().formatted()
         print("ViewController -> createClaim" )
         do{
             try context.save()
-            getAllClaim()
+            // getAllClaim()
         }
         catch{
             print("ViewControllerError -> Falha na criação" )
         }
+        return newClaim
     }
 
     func deleteClaim (item : Claim){
